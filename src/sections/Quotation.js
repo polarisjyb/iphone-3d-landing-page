@@ -24,16 +24,32 @@ const TextContainer = styled.div`
   color: var(--white);
 `
 
+const Text = styled.p`
+  width: 50%;
+  font-size: var(--fontlg);
+  position: relative;
+  height: var(--fontxl);
+
+span{
+  background-color: lightblue;
+  position: absolute;
+}
+`
+
 const Quotation = () => {
   return (
     <Section>
       <TextContainer>
-        <span>
-          Sometimes Life is going to hit you in the head with a brick. Don't lose faith.
-        </span>
-        <span>
-          Let's go invent tomorrow rather than worrying about what happened yesterday.
-        </span>
+        <Text>
+          <span>
+            Sometimes Life is going to hit you in the head with a brick. Don't lose faith.
+          </span>
+        </Text>
+        <Text>
+          <span>
+            Let's go invent tomorrow rather than worrying about what happened yesterday.
+          </span>
+        </Text>
       </TextContainer>
     </Section>
   );
