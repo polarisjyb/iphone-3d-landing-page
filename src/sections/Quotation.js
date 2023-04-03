@@ -44,9 +44,9 @@ const Text = styled.p`
 
   span{
     position: absolute;
-    transform: translateY(3rem);
+    transform: translateY(4rem);
     animation-name: ${moveUp};
-    animation-duration: 2.5s;
+    animation-duration: 2s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
     font-family: var(--fontL);
@@ -54,6 +54,13 @@ const Text = styled.p`
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .author{
+    padding-top: 1rem;
+    text-align: end;
+    background-image: linear-gradient(-180deg, var(--gradient));
+    font-family: var(--fontR);
   }
 `
 
@@ -70,6 +77,9 @@ const Quotation = () => {
           <span>
             &#8220; Let's go invent tomorrow rather than worrying about what happened yesterday. &#8221;
           </span>
+        </Text>
+        <Text>
+          <span className='author'> &#x23AF; Steve Jobs</span>
         </Text>
       </TextContainer>
     </Section>
