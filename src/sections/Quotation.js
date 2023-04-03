@@ -31,25 +31,30 @@ const moveUp = keyframes`
 `;
 
 const Text = styled.p`
-  width: 50%;
+  width: 100%;
+  height: var(--fontmd);
+  
   font-size: var(--fontlg);
   position: relative;
-  height: var(--fontmd);
   overflow: hidden;
 
-span{
-  position: absolute;
-  transform: translateY(3rem);
-  animation-name: ${moveUp};
-  animation-duration: 2.5s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  font-family: var(--fontL);
-  background-image: linear-gradient(90deg, var(--gradient));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span{
+    position: absolute;
+    transform: translateY(3rem);
+    animation-name: ${moveUp};
+    animation-duration: 2.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    font-family: var(--fontL);
+    background-image: linear-gradient(-45deg, var(--gradient));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 `
 
 const Quotation = () => {
@@ -58,12 +63,12 @@ const Quotation = () => {
       <TextContainer>
         <Text>
           <span>
-            Sometimes Life is going to hit you in the head with a brick. Don't lose faith.
+            &#8220; Sometimes Life is going to hit you in the head with a brick. Don't lose faith. &#8221;
           </span>
         </Text>
         <Text>
           <span>
-            Let's go invent tomorrow rather than worrying about what happened yesterday.
+            &#8220; Let's go invent tomorrow rather than worrying about what happened yesterday. &#8221;
           </span>
         </Text>
       </TextContainer>
