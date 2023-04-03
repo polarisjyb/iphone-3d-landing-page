@@ -11,9 +11,18 @@ const Section = styled.section`
   align-items: center;
 `
 
+const TextContainer = styled.div`
+
+`
+
 const Quotation = () => {
   return (
-    <Section>Quotation</Section>
+    <Section>
+      Sometimes Life is going to hit you in the head with a brick. Don't lose faith.
+      <br></br>
+      Let's go invent tomorrow rather than worrying about what happened yesterday.
+    </Section>
+
   );
 };
 
