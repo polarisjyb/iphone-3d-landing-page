@@ -19,6 +19,9 @@ const TextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  background-color: var(--dark);
+  color: var(--white);
 `
 
 const Quotation = () => {
