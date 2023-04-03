@@ -45,6 +45,10 @@ span{
   animation-timing-function: ease;
   animation-fill-mode: forwards;
   font-family: var(--fontL);
+  background-image: linear-gradient(90deg, var(--gradient));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 `
 
