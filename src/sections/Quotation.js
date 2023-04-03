@@ -49,6 +49,7 @@ const Text = styled.p`
     animation-duration: 2s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
+    animation-delay: ${ (props) => props.delay};
     font-family: var(--fontL);
     background-image: linear-gradient(-45deg, var(--gradient));
     background-clip: text;
@@ -68,17 +69,17 @@ const Quotation = () => {
   return (
     <Section>
       <TextContainer>
-        <Text>
+        <Text delay="0s">
           <span>
             &#8220; Sometimes Life is going to hit you in the head with a brick. Don't lose faith. &#8221;
           </span>
         </Text>
-        <Text>
+        <Text delay="0.4s">
           <span>
             &#8220; Let's go invent tomorrow rather than worrying about what happened yesterday. &#8221;
           </span>
         </Text>
-        <Text>
+        <Text delay="0.8s">
           <span className='author'> &#x23AF; Steve Jobs</span>
         </Text>
       </TextContainer>
