@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Section = styled.section`
   width: 100vw;
@@ -24,15 +24,27 @@ const TextContainer = styled.div`
   color: var(--white);
 `
 
+const moveUp = keyframes`
+  100%{
+    transform: translateY(0);
+  }
+`;
+
 const Text = styled.p`
   width: 50%;
   font-size: var(--fontlg);
   position: relative;
-  height: var(--fontxl);
+  height: var(--fontmd);
+  overflow: hidden;
 
 span{
-  background-color: lightblue;
   position: absolute;
+  transform: translateY(3rem);
+  animation-name: ${moveUp};
+  animation-duration: 2.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  font-family: var(--fontL);
 }
 `
 
