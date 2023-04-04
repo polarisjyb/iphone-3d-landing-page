@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Environment, OrbitControls } from "@react-three/drei";
+import Model from "../assets/3D-Model/Scene";
 
 const ModelContainer = styled.div`
   width: 100vw;
@@ -13,17 +14,18 @@ const ModelContainer = styled.div`
   background-color: transparent;
 `
 
-const Model = () => {
+const PhoneModel = () => {
   return (
     <ModelContainer>
       <Canvas>
-        <OrbitControls />
-        <mesh>
-          <boxGeometry />
-        </mesh>
+        <ambientLight intensity={1.5}/>
+        <directionalLight intensity={0.5} />
+          <Model />
+          <Environment preset="night" />
+          <OrbitControls />
       </Canvas>
     </ModelContainer>
   );
 };
 
-export default Model;
+export default PhoneModel;
