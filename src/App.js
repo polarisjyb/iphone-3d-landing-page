@@ -1,7 +1,7 @@
 import { GlobalStyle } from "./styles/GlobalStyle";
 import Quotation from "./sections/Quotation";
 import InkSection from "./sections/Ink";
-
+import Model from "./sections/Model";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <GlobalStyle />
       <Quotation />
       <InkSection />
+      <Model />
     </div>
   );
 }
