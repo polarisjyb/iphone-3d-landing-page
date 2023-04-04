@@ -1,7 +1,7 @@
 import { GlobalStyle } from "./styles/GlobalStyle";
 import Quotation from "./sections/Quotation";
 import InkSection from "./sections/Ink";
-import Model from "./sections/Model";
+import Model from "./sections/PhoneModel";
 
 function App() {
   return (
