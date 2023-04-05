@@ -10,7 +10,7 @@ const Section = styled.section`
   display: flex;
 
   background-color: var(--dark);
-  // overflow: hidden;
+  overflow: hidden;
 `
 
 const Title = styled.h1`
