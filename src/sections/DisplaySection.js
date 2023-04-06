@@ -71,6 +71,7 @@ const TextContainer = styled.div`
   align-items: center;
   transform: rotate(-20deg);
   margin-bottom: 4rem;
+  z-index: 1;
 `
 
 const MovingText = styled.h1`
