@@ -70,8 +70,7 @@ const Text = styled.div`
   color: var(--greyLight);
   width: 30%;
   height: 100vh;
-
-  // position: absolute;
+  z-index: 1;
 
   display: flex;
   flex-direction: column;
