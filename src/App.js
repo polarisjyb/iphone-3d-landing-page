@@ -5,6 +5,8 @@ import PhoneModel from "./sections/PhoneModel";
 import PhraseSection from "./sections/PhraseSection";
 import DisplaySection from "./sections/DisplaySection";
 import ProcessorSection from "./sections/ProcessorSection";
+import BatterySection from "./sections/BatterySection";
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <PhraseSection />
       <DisplaySection />
       <ProcessorSection />
+      <BatterySection />
     </div>
   );
 }
