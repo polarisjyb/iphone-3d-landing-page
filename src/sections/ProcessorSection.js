@@ -65,7 +65,24 @@ const Processor = styled.div`
   }
 `
 
+const Text = styled.div`
+  font-size: var(--fontxs);
+  color: var(--greyLight);
+  width: 30%;
+  height: 100vh;
 
+  // position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    margin: 0.2rem 0;
+    padding-left: 2rem;
+  }
+`
 
 const ProcessorSection = () => {
   return (
@@ -73,6 +90,19 @@ const ProcessorSection = () => {
       <Title>
         Fastest Processor
       </Title>
+      <Text>
+        <span>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Reprehenderit numquam quae nisi, dolore cum voluptatem cumque quo sit,
+          consequuntur necessitatibus iste fuga assumenda deserunt aut omnis,
+          quaerat aliquid optio veniam.
+        </span>
+        <span>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Reprehenderit numquam quae nisi, dolore cum voluptatem cumque quo sit,
+          consequuntur necessitatibus iste fuga assumenda deserunt aut.
+        </span>
+      </Text>
       <Processor>
         <img src={a15} alt="A15 processor" />
       </Processor>
