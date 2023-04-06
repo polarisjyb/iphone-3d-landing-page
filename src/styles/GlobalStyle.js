@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import fontLight from "../assets/fonts/SourceSansPro-Light.ttf";
 import fontRegular from "../assets/fonts/SourceSansPro-Regular.ttf";
+import fontSemiBold from "../assets/fonts/SourceSansPro-SemiBold.ttf";
 
 export const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -18,6 +19,13 @@ export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Source Sans Pro';
     src: local('Source Sans Pro'), url(${fontRegular}) format("truetype") ;
+    font-display:swap;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Source Sans Pro SemiBold';
+    src: local('Source Sans Pro Bold'), url(${fontSemiBold}) format("truetype") ;
     font-display:swap;
     font-style: normal;
   }
@@ -52,6 +60,7 @@ export const GlobalStyle = createGlobalStyle`
     //fonts
     --fontL: "Source Sans Pro light";
     --fontR: "Source Sans Pro";
+    --fontSemiB: "Source Sans Pro SemiBold";
     
     // gradient
     --gradient: #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%;
