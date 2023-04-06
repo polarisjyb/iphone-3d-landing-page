@@ -4,6 +4,7 @@ import InkSection from "./sections/Ink";
 import PhoneModel from "./sections/PhoneModel";
 import PhraseSection from "./sections/PhraseSection";
 import DisplaySection from "./sections/DisplaySection";
+import ProcessorSection from "./sections/ProcessorSection";
 
 function App() {
   return (
@@ -11,9 +12,10 @@ function App() {
       <GlobalStyle />
       <Quotation />
       <InkSection />
-      {/* <PhoneModel /> */}
+      <PhoneModel />
       <PhraseSection />
       <DisplaySection />
+      <ProcessorSection />
     </div>
   );
 }
