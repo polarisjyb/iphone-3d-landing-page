@@ -24,11 +24,39 @@ const Title = styled.h1`
   z-index: 1;
 `;
 
+const Battery = styled.ul`
+  position: absolute;
+  right: 4rem;
+  list-style: none;
+  background-color: var(--white);
+  border: 3px solid var(--dark);
+  border-radius: 8px;
+  padding: 0.5rem;
+  width: 15rem;
+
+  li {
+    width: 100%;
+    height: 5rem;
+    background-color: var(--dark);
+    background-image: linear-gradient(-90deg, var(--gradient));
+  }
+
+  & > *:not(:first-child):not(:last-child) {
+    margin: 0.5rem 0;
+  }
+`;
 
 const BatterySection = () => {
   return(
     <Section>
       <Title>Go all day with single charge...</Title>
+      <Battery>
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+      </Battery>
     </Section>
   );
 };
