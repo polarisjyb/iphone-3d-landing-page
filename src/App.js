@@ -8,6 +8,7 @@ import ProcessorSection from "./sections/ProcessorSection";
 import BatterySection from "./sections/BatterySection";
 import ColorSection from "./sections/ColorSection";
 import CameraSection from "./sections/CameraSection";
+import PricinigSection from "./sections/PricingSection";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
       <BatterySection />
       <ColorSection />
       <CameraSection />
+      <PricinigSection />
     </div>
   );
 }
