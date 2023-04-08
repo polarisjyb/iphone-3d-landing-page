@@ -6,19 +6,20 @@ import PhraseSection from "./sections/PhraseSection";
 import DisplaySection from "./sections/DisplaySection";
 import ProcessorSection from "./sections/ProcessorSection";
 import BatterySection from "./sections/BatterySection";
+import ColorSection from "./sections/ColorSection";
 
-
-function App() {
+const App = () => {
   return (
     <div className="App">
       <GlobalStyle />
       <Quotation />
       <InkSection />
-      <PhoneModel />
+      {/* <PhoneModel /> */}
       <PhraseSection />
       <DisplaySection />
       <ProcessorSection />
       <BatterySection />
+      <ColorSection />
     </div>
   );
 }
