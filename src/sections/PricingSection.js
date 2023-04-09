@@ -62,18 +62,84 @@ const Color = styled.li`
   border: 1px solid var(--dark);
 `;
 
+const Details = styled.div`
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Title = styled.h2`
+  font-size: var(--fontxl);
+  padding: 0.3rem;
+`;
+
+const SubTitle = styled.h2`
+  font-size: var(--fontmd);
+  font-family: var(--fontR);
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 1rem;
+`;
+
+const Btn = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+
+  border: none;
+  outline: none;
+
+  background-color: var(--blue);
+  color: var(--white);
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+const BtnLink = styled.a`
+  color: var(--blue);
+  text-decoration: none;
+  margin-left: 1.5rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const ArrowText = styled.div`
+  font-size: var(--fontsm);
+  position: absolute;
+  top: 1rem;
+`;
+
 const PricingSection = () => {
 
   const { materials } = useGLTF('/scene.gltf');
 
   let updateColor = (color) => {
+
     materials.Body.color.set(color);
+
   };
 
   return (
     <Container>
       <Section>
         <Phone>
+          <ArrowText>360&deg; &#x27F2;</ArrowText>
           <Canvas camera={{ fov: 14 }}>
             <ambientLight intensity={1} />
             <directionalLight intensity={0.4} />
@@ -95,6 +161,16 @@ const PricingSection = () => {
             <Color color="#215E7C" onClick={() => updateColor("#215E7C")} />
           </Colors>
         </Phone>
+
+        <Details>
+          <SubTitle>iPhone</SubTitle>
+          <Title>14 Pro Max</Title>
+          <SubTitle>From $1099*</SubTitle>
+          <ButtonContainer>
+            <Btn>Buy</Btn>
+            <BtnLink href="#">Learn More &#x2192;</BtnLink>
+          </ButtonContainer>
+        </Details>
       </Section>
     </Container>
   );
