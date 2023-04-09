@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useRef } from 'react';
 import styled from 'styled-components';
 import { Canvas } from '@react-three/fiber';
 import { AdaptiveDpr, AdaptiveEvents, Environment, useGLTF } from "@react-three/drei";
@@ -128,16 +128,18 @@ const ArrowText = styled.div`
 const PricingSection = () => {
 
   const { materials } = useGLTF('/scene.gltf');
+  const sectionRef = useRef(null);
 
-  let updateColor = (color) => {
+  let updateColor = (color, rgbColor) => {
 
     materials.Body.color.set(color);
+    sectionRef.current.style.backgroundColor = `rgba(${rgbColor}, 0.4)`
 
   };
 
   return (
     <Container>
-      <Section>
+      <Section ref={sectionRef}>
         <Phone>
           <ArrowText>360&deg; &#x27F2;</ArrowText>
           <Canvas camera={{ fov: 14 }}>
@@ -153,12 +155,12 @@ const PricingSection = () => {
             <OrbitControls enableZoom={false} />
           </Canvas>
           <Colors>
-            <Color color="#9BB5CE" onClick={() => updateColor("#9BB5CE")} />
-            <Color color="#F9E5C9" onClick={() => updateColor("#F9E5C9")} />
-            <Color color="#505F4E" onClick={() => updateColor("#505F4E")} />
-            <Color color="#574f6f" onClick={() => updateColor("#574f6f")} />
-            <Color color="#A50011" onClick={() => updateColor("#A50011")} />
-            <Color color="#215E7C" onClick={() => updateColor("#215E7C")} />
+            <Color color="#9BB5CE" onClick={() => updateColor("#9BB5CE", "155, 181, 206")} />
+            <Color color="#F9E5C9" onClick={() => updateColor("#F9E5C9", "249, 229, 201")} />
+            <Color color="#505F4E" onClick={() => updateColor("#505F4E", "80, 95, 78")} />
+            <Color color="#574f6f" onClick={() => updateColor("#574f6f", "87, 79, 111")} />
+            <Color color="#A50011" onClick={() => updateColor("#A50011", "165, 0, 17")} />
+            <Color color="#215E7C" onClick={() => updateColor("#215E7C", "33, 94, 124")} />
           </Colors>
         </Phone>
 
