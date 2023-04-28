@@ -16,7 +16,7 @@ const App = () => {
       <GlobalStyle />
       <Quotation />
       <InkSection />
-      {/* <PhoneModel /> */}
+      <PhoneModel />
       <PhraseSection />
       <DisplaySection />
       <ProcessorSection />
