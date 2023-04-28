@@ -1,4 +1,6 @@
-import React from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useLayoutEffect, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 
 const Section = styled.section`
@@ -37,7 +39,6 @@ const Text = styled.p`
   font-size: var(--fontlg);
   position: relative;
   overflow: hidden;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,7 +57,7 @@ const Text = styled.p`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-
+  
   .author{
     padding-top: 1rem;
     text-align: end;
@@ -66,20 +67,38 @@ const Text = styled.p`
 `
 
 const Quotation = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  const sectionRef = useRef(null);
+
+  useLayoutEffect(() => {
+    let Elem = sectionRef.current;
+
+    let trigger = ScrollTrigger.create({
+      trigger: Elem,
+      start: "top top",
+      pin: true,
+      pinSpacing: false,
+    });
+
+    return () => {
+      if (trigger) trigger.kill();
+    };
+  }, []);
+
   return (
-    <Section>
+    <Section ref={sectionRef}>
       <TextContainer>
         <Text delay="0s">
           <span>
             &#8220; Sometimes Life is going to hit you in the head with a brick. Don't lose faith. &#8221;
           </span>
         </Text>
-        <Text delay="0.4s">
+        <Text delay="0s">
           <span>
             &#8220; Let's go invent tomorrow rather than worrying about what happened yesterday. &#8221;
           </span>
         </Text>
-        <Text delay="0.8s">
+        <Text delay="0.6s">
           <span className='author'> &#x23AF; Steve Jobs</span>
         </Text>
       </TextContainer>
