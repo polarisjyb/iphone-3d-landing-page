@@ -18,7 +18,7 @@ const ModelContainer = styled.div`
 
 const PhoneModel = () => {
   return (
-    <ModelContainer>
+    <ModelContainer id = "phone-model">
       <Canvas camera={{fov: 20}}>
         <ambientLight intensity={1.5}/>
         <directionalLight intensity={0.5} />
