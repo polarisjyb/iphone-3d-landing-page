@@ -1,4 +1,5 @@
-import React from "react";
+import { gsap } from "gsap";
+import React, { useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
 
 const Section = styled.section`
@@ -36,7 +37,6 @@ const TextContainer = styled.p`
 const TextContainer2 = styled.p`
   width: 100%;
   height: 50vh;
-  z-index: 1;
 
   display: flex;
   flex-direction: column;
@@ -46,21 +46,47 @@ const TextContainer2 = styled.p`
 
   span{
     font-size: var(--fontxxxl);
-    width: 45%;
+    width: 80%;
     font-weight: 600;
     text-transform: capitlize;
+    align-self: flex-end;
+    text-align: right;
   }
 `
 
 
 const PhraseSection = () => {
+
+  const container = useRef(null);
+  const textOne = useRef(null);
+  const textTwo = useRef(null);
+
+  useLayoutEffect(() => {
+    let t1 = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top-=300 top",
+          end: "bottom top",
+          // scrub: 1,
+        },
+      })
+    .fromTo(textOne.current, {x:0}, {x:"10%"}, "key1")
+    .fromTo(textTwo.current, {x:0}, {x:"-10%"}, "key1");
+
+    return () => {
+      if (t1) t1.kill();
+    };
+
+  }, []);
+
   return (
-    <Section>
-      <TextContainer>
-        <span>There may be distressing events, but no such thing as failure.</span>
+    <Section ref={container}>
+      <TextContainer ref={textOne}>
+        <span>Say hello to the future </span>
       </TextContainer>
-      <TextContainer2>
-        <span>Love what you have.</span>
+      <TextContainer2 ref={textTwo}>
+        <span>Just the right amount of everything</span>
       </TextContainer2>
     </Section>
   );
