@@ -51,10 +51,10 @@ const Battery = styled.ul`
 const BatterySection = () => {
 
   const battery = useRef(null);
-  
-  let elements = gsap.utils.selector(battery);
+
   
   useLayoutEffect(() => {
+    let elements = gsap.utils.selector(battery);
     let t1 = gsap.timeline({});
 
     elements('li').forEach(el => {
