@@ -1,4 +1,5 @@
-import React from "react";
+import { gsap } from "gsap";
+import React, { useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
 
 const Section = styled.div`
@@ -69,7 +70,7 @@ const TextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: rotate(-20deg);
+  transform: rotate(-25deg);
   margin-bottom: 4rem;
   z-index: 1;
 `
@@ -84,8 +85,30 @@ const MovingText = styled.h1`
   -webkit-text-fill-color: transparent;
 `
 
-
 const DisplaySection = () => {
+
+  const container = useRef(null);
+  const textOne = useRef(null);
+  const textTwo = useRef(null);
+
+  useLayoutEffect(() => {
+    let t1 = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top-=500 top",
+          end: "bottom top",
+          scrub: 1,
+        },
+      })
+      .fromTo(textOne.current, {x: 0}, {x: "-20%"}, "")
+      .fromTo(textTwo.current, {x: 0}, {x: "20%"}, "");
+
+    return () => {
+      if (t1) t1.kill();
+    };
+  }, []);
+
   return(
     <Section>
       <MainTitle>
@@ -98,7 +121,7 @@ const DisplaySection = () => {
           Necessitatibus dignissimos ipsam.
         </Text>
       </TextBlockRight>
-      <TextBlockLeft>
+      <TextBlockLeft ref={container}>
         <Title>Big is better</Title>
         <Text>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -106,8 +129,8 @@ const DisplaySection = () => {
         </Text>
       </TextBlockLeft>
       <TextContainer>
-        <MovingText>Tougher then ever!</MovingText>
-        <MovingText>Every touch matters.</MovingText>
+        <MovingText ref={textOne}>Tougher then ever!</MovingText>
+        <MovingText ref={textTwo}>Every touch matters.</MovingText>
       </TextContainer>
     </Section>
   );
