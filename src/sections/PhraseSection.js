@@ -68,7 +68,7 @@ const PhraseSection = () => {
           trigger: container.current,
           start: "top-=300 top",
           end: "bottom top",
-          // scrub: 1,
+          scrub: 1,
         },
       })
     .fromTo(textOne.current, {x:0}, {x:"10%"}, "key1")
