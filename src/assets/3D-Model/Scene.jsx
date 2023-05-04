@@ -25,7 +25,6 @@ export default function Model(props) {
         trigger: "#phone-model",
         start: "top top",
         end: "bottom+=500 bottom",
-        markers: true,
       },
     });
 
