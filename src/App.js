@@ -9,10 +9,11 @@ import BatterySection from "./sections/BatterySection";
 import ColorSection from "./sections/ColorSection";
 import CameraSection from "./sections/CameraSection";
 import PricingSection from "./sections/PricingSection";
+import { ColorContextProvider } from "./context/ColorContext";
 
 const App = () => {
   return (
-    <div className="App">
+    <>
       <GlobalStyle />
       <Quotation />
       <InkSection />
@@ -21,11 +22,13 @@ const App = () => {
       <DisplaySection />
       <ProcessorSection />
       <BatterySection />
-      <ColorSection />
-      <CameraSection />
-      <PricingSection />
-    </div>
+      <ColorContextProvider>
+        <ColorSection />
+        <CameraSection />
+        <PricingSection />
+      </ColorContextProvider>
+    </>
   );
-}
+};
 
 export default App;
